@@ -1,0 +1,55 @@
+.page-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.sidebar-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+}
+
+.page-sidebar .logo {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 10px 30px;
+    text-align: center;
+}
+
+.logo img.lazyloaded {
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.logo .logo-image {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.logo .logo-placeholder {
+    z-index: 0;
+    width: 100%;
+}
+img {
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}

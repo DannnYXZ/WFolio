@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Karla', serif;
+    color: #fff;
+    background: #1d1d21;
+}
+
+#root {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
