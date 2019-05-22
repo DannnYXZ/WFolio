@@ -18,8 +18,8 @@ class Template extends React.Component {
                             <div className="main-content">
                                 {this.props.children}
                             </div>
-                            <Footer/>
                         </div>
+                        <Footer/>
                     </main>
                 </div>
             </div>
