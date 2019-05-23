@@ -17,12 +17,12 @@ class FeedbackController extends AbstractController {
     /**
      * @Route("/feedback")
      */
-    public function home() {
+    public function feedback() {
         return $this->render('feedback.html.twig');
     }
 
     /**
-     * @Route("/fee")
+     * @Route("/feedback-messages")
      */
     public function albums() {
         //var_dump($products);

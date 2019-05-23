@@ -4,6 +4,7 @@ import './Feedback.css'
 import Template from './components/Template.js'
 import Response from './components/Response.js';
 import ReactDom from "react-dom";
+import ReplySender from "./components/ReplySender";
 
 class Feedback extends React.Component {
     constructor(props) {
@@ -14,28 +15,38 @@ class Feedback extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/feedback')
+        axios.get('/feedback-messages')
             .then(response => {
                 console.log(response);
                 this.setState({
-                    comments: response.data
+                    comments: response.data.comments ? response.data.comments : []
                 });
             });
     }
 
     render() {
-        const comments = this.state.images.map(e =>
+        let content;
+        content = (
+            <ReplySender/>
+        );
+        /*
+        const comments = this.state.comments.map(e =>
             <Response
                 username={e.username}
                 content={e.content}
             />
         );
+
+        console.log('kek');
         const content = (
             <Feedback>
-                {comments}
+                {null}
             </Feedback>
             //< /MessageSender>
         );
+
+    }
+    */
         return (
             <Template>
                 {content}
@@ -43,5 +54,6 @@ class Feedback extends React.Component {
         );
     }
 }
+
 ReactDom.render(<Feedback/>, document.getElementById('root'));
 //export default Feedback;
