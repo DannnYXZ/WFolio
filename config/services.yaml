@@ -31,3 +31,10 @@ services:
         arguments: [~, App\Entity\Album, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Album }
+
+
+    admin.comment:
+        class: App\Admin\CommentAdmin
+        arguments: [~, App\Entity\Comment, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: Comment }

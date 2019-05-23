@@ -19,17 +19,18 @@ class Feedback extends React.Component {
             .then(response => {
                 console.log(response);
                 this.setState({
-                    comments: response.data.comments ? response.data.comments : []
+                    comments: response.data ? response.data : []
                 });
             });
     }
 
     render() {
+        /*
         let content;
         content = (
             <ReplySender/>
         );
-        /*
+        */
         const comments = this.state.comments.map(e =>
             <Response
                 username={e.username}
@@ -37,19 +38,10 @@ class Feedback extends React.Component {
             />
         );
 
-        console.log('kek');
-        const content = (
-            <Feedback>
-                {null}
-            </Feedback>
-            //< /MessageSender>
-        );
-
-    }
-    */
         return (
             <Template>
-                {content}
+                <ReplySender/>
+                {comments}
             </Template>
         );
     }

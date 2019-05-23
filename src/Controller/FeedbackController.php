@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Album;
+use App\Entity\Comment;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,8 +27,9 @@ class FeedbackController extends AbstractController {
      */
     public function albums() {
         //var_dump($products);
-        $albums = $this->getDoctrine()
-            ->getRepository(Album::class)
+        $albums =
+            $this->getDoctrine()
+            ->getRepository(Comment::class)
             ->findAll();
         $encoders = [new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -35,6 +37,25 @@ class FeedbackController extends AbstractController {
         $albums = $serializer->serialize($albums, 'json');
         $response = new Response($albums);
         return $response;
+    }
+
+    /**
+     * @Route("/post-comment")
+     * @param Security $security
+     * @return Response
+     */
+    public function store_comment(Security $security) {
+        $user = $security->getUser();
+        if ($user && $_POST['message']) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $product = new Comment();
+            $product->setUsername($user->getUsername());
+            $product->setContent($_POST['message']);
+            $entityManager->persist($product);
+            $entityManager->flush();
+
+        }
+        return $this->render('feedback.html.twig');
     }
 
 }
