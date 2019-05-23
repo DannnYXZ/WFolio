@@ -42,6 +42,6 @@ body {
     margin-left: 20%;
     padding: 0 3%;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     background-attachment: local;
 }

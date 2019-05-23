@@ -19,9 +19,11 @@ class CommentAdmin extends AbstractAdmin {
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper) {
         $datagridMapper->add('username');
+        $datagridMapper->add('content');
     }
 
     protected function configureListFields(ListMapper $listMapper) {
         $listMapper->addIdentifier('username');
+        $listMapper->addIdentifier('content');
     }
 }

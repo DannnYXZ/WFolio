@@ -25,12 +25,6 @@ class Feedback extends React.Component {
     }
 
     render() {
-        /*
-        let content;
-        content = (
-            <ReplySender/>
-        );
-        */
         const comments = this.state.comments.map(e =>
             <Response
                 username={e.username}
