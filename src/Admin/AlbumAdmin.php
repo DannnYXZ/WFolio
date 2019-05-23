@@ -16,8 +16,10 @@ class AlbumAdmin extends AbstractAdmin {
     protected function configureFormFields(FormMapper $formMapper) {
         $formMapper
             ->add('title', TextType::class)
-            ->add('path', TextType::class)
-            ->add('logoFile', VichFileType::class);
+            ->add('path', TextType::class, ['label'=>'Link'])
+            ->add('logoFile', VichFileType::class, [
+                'allow_delete' => false,
+            ]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper) {

@@ -22,6 +22,15 @@ class Home extends React.Component {
                     images: images
                 })
             });
+
+        axios.get('/ke')
+            .then(response => {
+                const images = response.data;
+                //console.log(images);
+                this.setState({
+                    images: images
+                })
+            });
     }
 
     render() {
