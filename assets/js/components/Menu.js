@@ -10,7 +10,7 @@ class Menu extends React.Component {
                     <li className="menu-item"><a className="link" href="/">WEDDING</a></li>
                     <li className="menu-item -active"><a className="link" href="/family">FAMILY</a></li>
                     <li className="menu-item"><a className="link" href="/fashion">FASHION</a></li>
-                    <li className="menu-item"><a className="link" href="/backstage">BACKSTAGE</a></li>
+                    <li className="menu-item"><a className="link" href="/feedback">FEEDBACK</a></li>
                     <li className="menu-item"><a className="link" href="/contacts">CONTACTS</a></li>
                 </ul>
             </div>

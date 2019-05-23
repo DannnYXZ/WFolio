@@ -1,7 +1,7 @@
-require('../css/app.css');
+//require('../css/app.css');
 import React from 'react';
 import ReactDom from 'react-dom';
-import Home from './components/screens/Home'
+import Home from './Home'
 
 class App extends React.Component {
     render() {
@@ -11,4 +11,4 @@ class App extends React.Component {
     }
 }
 
-ReactDom.render(<App/>, document.getElementById('root'));
+ReactDom.render(<Home/>, document.getElementById('root'));

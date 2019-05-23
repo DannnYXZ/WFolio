@@ -1,9 +1,10 @@
 import React from 'react';
-import './Home.css'
-import Template from '../Template.js'
-import Album from "../Album";
-import Albums from "../Albums";
+//import './components/News.css'
+import Template from './components/Template.js'
+import Album from "./components/Album";
+import Albums from "./components/Albums";
 import axios from 'axios'
+import ReactDom from "react-dom";
 
 class Home extends React.Component {
     constructor(props) {
@@ -15,15 +16,6 @@ class Home extends React.Component {
 
     componentDidMount() {
         axios.get('/wedding-albums')
-            .then(response => {
-                const images = response.data;
-                //console.log(images);
-                this.setState({
-                    images: images
-                })
-            });
-
-        axios.get('/ke')
             .then(response => {
                 const images = response.data;
                 //console.log(images);
@@ -52,5 +44,5 @@ class Home extends React.Component {
         );
     }
 }
-
-export default Home;
+ReactDom.render(<Home/>, document.getElementById('root'));
+//export default Home;

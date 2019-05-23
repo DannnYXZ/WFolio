@@ -3,6 +3,7 @@ import './Template.css'
 import SideBar from "./SideBar";
 import Menu from "./Menu.js";
 import Footer from './Footer.js'
+import User from "./User";
 
 class Template extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class Template extends React.Component {
                     <main className="page-main js-main js-scrollable">
                         <div className="main-wrapper">
                             <header className="main-header js-header -visible">
+                                <User/>
                                 <Menu/>
                             </header>
                             <div className="main-content">

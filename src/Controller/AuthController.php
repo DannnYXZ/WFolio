@@ -17,8 +17,8 @@ class AuthController {
     public function kek(Security $security) {
         $user = $security->getUser();
         if ($user)
-            return new JsonResponse($user->getUsername());
+            return new JsonResponse(['username' => $user->getUsername()]);
         else
-            return new JsonResponse("null");
+            return new JsonResponse([]);
     }
 }
